@@ -21,3 +21,6 @@ jobs:
         run: echo "PYTHONPATH=${{ github.workspace }}" >> $GITHUB_ENV
       - name: Run Linter (flake8)
         run: flake8
+      - name: Check code formatting with black
+        run: black --check .
+
