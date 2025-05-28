@@ -17,4 +17,7 @@ jobs:
           pip install -r requirements.txt
       - name: Run tests
         run: pytest
-
+      - name: Set PYTHONPATH
+        run: echo "PYTHONPATH=${{ github.workspace }}" >> $GITHUB_ENV
+      - name: Run Linter (flake8)
+        run: flake8
